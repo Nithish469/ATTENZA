@@ -1,0 +1,2 @@
+﻿ALTER TABLE "employees"
+ADD COLUMN "status" TEXT NOT NULL DEFAULT 'ACTIVE';
