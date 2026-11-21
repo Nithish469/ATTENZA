@@ -1,7 +1,7 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import { RefreshCw, Clock, ShieldCheck } from "lucide-react";
-import API from "../services/api";
+import API from "../../services/api";
 
 const QR_VALIDITY_SECONDS = 120;
 

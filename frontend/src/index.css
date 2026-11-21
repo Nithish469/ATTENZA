@@ -1219,3 +1219,168 @@ body {
   margin-top: 20px;
   margin-bottom: 24px;
 }
+
+/* ==========================================
+   ATTENZA - GLOBAL DESIGN SYSTEM
+   Cream White + Forest Green
+========================================== */
+
+:root {
+  color-scheme: light;
+
+  --primary: #0B3D2E;
+  --primary-hover: #145A43;
+  --primary-light: #E8F0E9;
+
+  --background: #FFF8EF;
+  --surface: #FFFFFF;
+  --surface-secondary: #F5F1E9;
+
+  --text-primary: #24352C;
+  --text-secondary: #6B776F;
+
+  --border: #E5E0D7;
+
+  --success: #16845B;
+  --warning: #D69B32;
+  --danger: #C84C4C;
+
+  --shadow:
+    0 8px 24px rgba(11, 61, 46, 0.07);
+}
+
+/* Global Reset */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lexend', sans-serif;
+  background: var(--background);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Main Application */
+
+#root {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  border: none;
+  background: var(--background);
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-family: 'Lexend', sans-serif;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* Common Cards */
+
+.card,
+.stat-card,
+.settings-card,
+.attendance-kiosk,
+.qr-display-card,
+.employee-scan-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* Common Primary Buttons */
+
+.save-settings-btn,
+.manual-qr-btn,
+.continue-attendance-btn,
+.qr-error button {
+  background: var(--primary);
+  color: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.save-settings-btn:hover,
+.manual-qr-btn:hover,
+.continue-attendance-btn:hover,
+.qr-error button:hover {
+  background: var(--primary-hover);
+}
+
+/* Input Focus */
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline-color: var(--primary);
+}
+
+/* Icons */
+
+.settings-icon,
+.kiosk-logo,
+.qr-logo {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+/* Stat Icons */
+
+.stat-icon.green {
+  background: #E4F2E9;
+  color: #16845B;
+}
+
+.stat-icon.blue {
+  background: #E8F0E9;
+  color: var(--primary);
+}
+
+/* Selection */
+
+::selection {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+/* Smooth Transitions */
+
+button,
+a,
+.card {
+  transition: all 0.2s ease;
+}
+
+/* Mobile Background */
+
+@media (max-width: 600px) {
+  body {
+    background: var(--background);
+  }
+}
+z

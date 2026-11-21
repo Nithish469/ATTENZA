@@ -10,8 +10,8 @@ import {
   CheckCircle2,
   AlertCircle,
 } from "lucide-react";
-import API from "../services/api";
-import "./MyAttendance.css";
+import API from "../../services/api";
+import "../MyAttendance.css";
 
 function MyAttendance({ employee, onLogout }) {
   const [records, setRecords] = useState([]);

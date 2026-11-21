@@ -8,7 +8,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 
-import API from "../services/api";
+import API from "../../services/api";
 
 function EmployeeAttendance() {
   const [employeeId, setEmployeeId] = useState("");

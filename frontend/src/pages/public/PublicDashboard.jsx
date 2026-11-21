@@ -8,7 +8,7 @@ import {
   RefreshCw,
   Info,
 } from "lucide-react";
-import API from "../services/api";
+import API from "../../services/api";
 
 function PublicDashboard() {
   const [summary, setSummary] = useState(null);

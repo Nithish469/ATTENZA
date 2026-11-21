@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+
 import {
   QrCode,
   ShieldCheck,
@@ -11,9 +12,11 @@ import {
 } from "lucide-react";
 
 import PublicDashboard from "./PublicDashboard";
-import QRDisplay from "./QRDisplay";
-import "./PublicHome.css";
-import anbuLogo from "../assets/anbu-aiot-logo.png";
+import QRDisplay from "../attendance/QRDisplay";
+
+import "../PublicHome.css";
+
+import anbuLogo from "../../assets/anbu-aiot-logo.png";
 
 function PublicHome({ onAdminLogin, onEmployeeLogin }) {
   const [showDashboard, setShowDashboard] = useState(true);
@@ -27,7 +30,6 @@ function PublicHome({ onAdminLogin, onEmployeeLogin }) {
           href="/"
           aria-label="ATTENZA home"
         >
-          {/* Logo in the top-left navbar */}
           <span className="public-brand-icon">
             <img src={anbuLogo} alt="ATTENZA Logo" />
           </span>
@@ -60,15 +62,11 @@ function PublicHome({ onAdminLogin, onEmployeeLogin }) {
       </header>
 
       <main className="public-main">
-        {/* Hero section */}
+        {/* Hero Section */}
         <section className="public-hero">
           <div className="public-hero-content">
-            {/* Main logo above the heading */}
             <div className="hero-logo">
-              <img
-                src={anbuLogo}
-                alt="ATTENZA Logo"
-              />
+              <img src={anbuLogo} alt="ATTENZA Logo" />
             </div>
 
             <span className="public-eyebrow">
@@ -91,6 +89,7 @@ function PublicHome({ onAdminLogin, onEmployeeLogin }) {
                 <span className="public-feature-icon feature-teal">
                   <ShieldCheck size={29} />
                 </span>
+
                 <strong>
                   Secure QR
                   <br />
@@ -102,6 +101,7 @@ function PublicHome({ onAdminLogin, onEmployeeLogin }) {
                 <span className="public-feature-icon feature-blue">
                   <Zap size={29} />
                 </span>
+
                 <strong>
                   Quick
                   <br />
@@ -113,6 +113,7 @@ function PublicHome({ onAdminLogin, onEmployeeLogin }) {
                 <span className="public-feature-icon feature-purple">
                   <UsersRound size={29} />
                 </span>
+
                 <strong>
                   Easy and
                   <br />
@@ -122,7 +123,7 @@ function PublicHome({ onAdminLogin, onEmployeeLogin }) {
             </div>
           </div>
 
-          {/* QR section */}
+          {/* QR Section */}
           <aside className="public-qr-panel">
             <div className="public-qr-panel-heading">
               <span className="public-qr-icon">
@@ -141,7 +142,7 @@ function PublicHome({ onAdminLogin, onEmployeeLogin }) {
           </aside>
         </section>
 
-        {/* Public dashboard */}
+        {/* Public Dashboard */}
         <section className="public-dashboard-section">
           <div className="public-section-heading">
             <div>
@@ -162,6 +163,7 @@ function PublicHome({ onAdminLogin, onEmployeeLogin }) {
               }
             >
               <RefreshCw size={19} />
+
               {showDashboard ? "Hide Summary" : "Show Summary"}
             </button>
           </div>
@@ -174,6 +176,7 @@ function PublicHome({ onAdminLogin, onEmployeeLogin }) {
 
           <div className="public-privacy-note">
             <Info size={21} />
+
             <span>
               This page displays summary counts only. Individual employee
               attendance details are private.

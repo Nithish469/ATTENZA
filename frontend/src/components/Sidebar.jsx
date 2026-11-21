@@ -7,7 +7,41 @@ import {
   Settings,
   LogOut,
   CalendarDays,
+  ShieldCheck,
 } from "lucide-react";
+
+const menuItems = [
+  {
+    id: "dashboard",
+    label: "Dashboard",
+    icon: LayoutDashboard,
+  },
+  {
+    id: "employees",
+    label: "Employees",
+    icon: Users,
+  },
+  {
+    id: "attendance",
+    label: "Attendance",
+    icon: ClipboardCheck,
+  },
+  {
+    id: "holidays",
+    label: "Holidays",
+    icon: CalendarDays,
+  },
+  {
+    id: "reports",
+    label: "Reports",
+    icon: BarChart3,
+  },
+  {
+    id: "settings",
+    label: "Settings",
+    icon: Settings,
+  },
+];
 
 function Sidebar({ page, setPage, onLogout }) {
   const handleLogout = () => {
@@ -20,78 +54,89 @@ function Sidebar({ page, setPage, onLogout }) {
     if (typeof onLogout === "function") {
       onLogout();
     } else {
-      console.error(
-        "Logout function is not connected. Check App.jsx."
-      );
+      console.error("Logout function is not connected.");
     }
   };
 
   return (
-    <aside className="sidebar">
-      <div className="logo">
-        <div className="logo-icon">A</div>
+    <aside className="attenza-sidebar">
 
-        <div>
+      {/* Brand */}
+      <div className="attenza-sidebar-brand">
+        <div className="attenza-brand-icon">
+          A
+        </div>
+
+        <div className="attenza-brand-content">
           <h2>ATTENZA</h2>
-          <span>Smarter Attendance, Better Management</span>
+          <span>Attendance Management</span>
         </div>
       </div>
 
-      <nav>
-        <a
-          className={page === "dashboard" ? "active" : ""}
-          onClick={() => setPage("dashboard")}
-        >
-          <LayoutDashboard size={20} />
-          Dashboard
-        </a>
+      {/* Admin Profile */}
+      <div className="attenza-admin-profile">
+        <div className="attenza-admin-avatar">
+          <ShieldCheck size={20} />
+        </div>
 
-        <a
-          className={page === "employees" ? "active" : ""}
-          onClick={() => setPage("employees")}
-        >
-          <Users size={20} />
-          Employees
-        </a>
+        <div className="attenza-admin-info">
+          <strong>Administrator</strong>
+          <span>Management Portal</span>
+        </div>
 
-        <a
-          className={page === "attendance" ? "active" : ""}
-          onClick={() => setPage("attendance")}
-        >
-          <ClipboardCheck size={20} />
-          Attendance
-        </a>
+        <span className="attenza-online-dot" />
+      </div>
 
-        <a
-          className={page === "holidays" ? "active" : ""}
-          onClick={() => setPage("holidays")}
-        >
-          <CalendarDays size={20} />
-          Holidays
-        </a>
+      {/* Navigation */}
+      <div className="attenza-menu-heading">
+        MAIN MENU
+      </div>
 
-        <a
-          className={page === "reports" ? "active" : ""}
-          onClick={() => setPage("reports")}
-        >
-          <BarChart3 size={20} />
-          Reports
-        </a>
+      <nav className="attenza-sidebar-nav">
+        {menuItems.map((item) => {
+          const Icon = item.icon;
+          const isActive = page === item.id;
 
-        <a
-          className={page === "settings" ? "active" : ""}
-          onClick={() => setPage("settings")}
-        >
-          <Settings size={20} />
-          Settings
-        </a>
+          return (
+            <button
+              key={item.id}
+              type="button"
+              className={`attenza-menu-item ${
+                isActive ? "active" : ""
+              }`}
+              onClick={() => setPage(item.id)}
+              aria-current={
+                isActive ? "page" : undefined
+              }
+            >
+              <Icon size={19} strokeWidth={2} />
+              <span>{item.label}</span>
+            </button>
+          );
+        })}
       </nav>
 
-      <div className="sidebar-bottom">
-        <button type="button" onClick={handleLogout}>
-          <LogOut size={18} />
-          Logout
+      {/* Sidebar Bottom */}
+      <div className="attenza-sidebar-bottom">
+
+        <div className="attenza-sidebar-footer-note">
+          <ShieldCheck size={17} />
+          <span>Secure Attendance System</span>
+        </div>
+
+        <button
+          type="button"
+          className="attenza-logout-button"
+          onClick={handleLogout}
+        >
+          <LogOut size={19} />
+          <span>Logout</span>
         </button>
+
+        <div className="attenza-sidebar-version">
+          ATTENZA © 2026
+        </div>
+
       </div>
     </aside>
   );

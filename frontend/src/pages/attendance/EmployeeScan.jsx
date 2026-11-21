@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { QrCode, CheckCircle, AlertCircle } from "lucide-react";
 import { Html5Qrcode } from "html5-qrcode";
 
-import API from "../services/api";
+import API from "../../services/api";
 
 function EmployeeScan() {
   const scannerRef = useRef(null);
